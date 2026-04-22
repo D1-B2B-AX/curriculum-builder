@@ -1,9 +1,9 @@
 ---
-name: final-curriculum-assembly
-description: curriculum-builder 최종 조합. Skill 5·6·7·8이 만든 툴별 m1·m2·m3·m4-{tool}.md를 읽어 단일 curriculum.md 산출. 구조는 "툴별 커리큘럼 표(메인) + 모듈 구성 설명(보충)". 복수 툴이면 한 파일 안에 툴별 섹션 나란히. Phase 1 순수 설계 — 시수·보안·수준 미반영 (Skill 9 Phase 2에서 재단).
+name: phase1-curriculum-assembly
+description: curriculum-builder Phase 1 조합. Skill 5·6·7·8이 만든 툴별 m1·m2·m3·m4-{tool}.md를 읽어 단일 curriculum.md 산출. 구조는 "툴별 커리큘럼 표(메인) + 모듈 구성 설명(보충)". 복수 툴이면 한 파일 안에 툴별 섹션 나란히. Phase 1 순수 설계 — 시수·보안·수준 미반영 (Skill 9 Phase 2에서 재단).
 ---
 
-# 최종 조합: Curriculum Assembly (Phase 1 순수)
+# Phase 1 조합: Curriculum Assembly (Phase 1 순수)
 
 ## 역할
 
@@ -17,18 +17,18 @@ Skill 5·6·7·8이 만든 툴별 m1·m2·m3·m4 모듈 구성 기획 문서를 
 
 ## Phase 1 순수 원칙
 
-- **시수 미포함** (설계도 §2 최종 조합 예시도 "Phase 1 — 시수 미포함" 명시)
+- **시수 미포함** (설계도 §2 Phase 1 조합 예시도 "Phase 1 — 시수 미포함" 명시)
 - **보안·수준 미반영** — Skill 9 Phase 2에서 재단
 - **m1~m4 원문의 성격 유지** — 모듈 구성 기획 수준 (교안 아님)
 - **원문에 없는 내용 창작 금지** — m1~m4에 명시된 꼭지·내용만 사용
 
 ## 실행 순서 (Phase 1 한정)
 
-**현재(Phase 1)**: M1~M4 → **최종 조합(이 스킬)** → Skill 9 (Phase 2 껍데기)
+**현재(Phase 1)**: M1~M4 → **Phase 1 조합(이 스킬)** → Skill 9 (Phase 2 껍데기)
 
 - 원칙적으로는 Phase 2(시수·보안·수준 재단)이 **먼저**이고 그 결과로 최종 표가 나오는 게 맞음
-- 하지만 Phase 1에서 Skill 9는 껍데기 수준이므로, 최종 조합을 먼저 수행해 **수빈님이 LD 관점에서 커리큘럼 골자를 바로 검토**할 수 있게 함
-- 향후 Skill 9가 완성되면 **"Skill 9 → 최종 조합"** 순서로 재정렬 가능 (그때는 최종 조합 결과가 시수·보안·수준 재단 이후의 실제 운영 커리큘럼)
+- 하지만 Phase 1에서 Skill 9는 껍데기 수준이므로, Phase 1 조합을 먼저 수행해 **수빈님이 LD 관점에서 커리큘럼 골자를 바로 검토**할 수 있게 함
+- 향후 Skill 9가 완성되면 **"Skill 9 → Phase 1 조합"** 순서로 재정렬 가능 (그때는 Phase 1 조합 결과가 시수·보안·수준 재단 이후의 실제 운영 커리큘럼)
 - 따라서 본 스킬은 "Phase 1 스냅샷"으로 이해할 것. Skill 9 이후 재생성 시 본 스킬 재실행 권장
 
 ---
@@ -59,7 +59,7 @@ Skill 5·6·7·8이 만든 툴별 m1·m2·m3·m4 모듈 구성 기획 문서를 
 # {company} {role} — AI 교육 커리큘럼
 
 > 생성 정보
-> - 최종 조합 — curriculum-builder
+> - Phase 1 조합 — curriculum-builder
 > - 생성일: {YYYY-MM-DD}
 > - 회사·직무: {company} / {role}
 > - 주제: {input.topic}
@@ -357,7 +357,7 @@ LLM 호출 실패 시 최대 2회 재시도.
 - m1~m4 중 일부 누락 → 해당 Skill 재실행 유도:
   ```
   ⚠ {tool_name}의 m{N}-{tool}.md 파일이 누락되었습니다.
-  Skill {N} 재실행 후 최종 조합을 다시 실행해주세요.
+  Skill {N} 재실행 후 Phase 1 조합을 다시 실행해주세요.
   ```
 
 ### Case B (시스템 오류)
@@ -369,7 +369,7 @@ LLM 호출 실패 시 최대 2회 재시도.
 ## LD 피드백 처리
 
 - **"OK"** → Skill 9 (Phase 2)로 진행
-- **"M{N} 내용을 다르게"** → Skill 5·6·7·8 중 해당 스킬 재실행 후 최종 조합 재수행
+- **"M{N} 내용을 다르게"** → Skill 5·6·7·8 중 해당 스킬 재실행 후 Phase 1 조합 재수행
 - **"표 bullet 스타일을 다르게"** → Step 2 재실행 (bullet 작성 원칙에 LD 요청 반영)
 - **"모듈 구성 설명을 더 간결하게 / 풍부하게"** → Step 2 재실행 (분량 지시 반영)
 
