@@ -10,14 +10,14 @@ description: curriculum-builder 툴 기능 조사. input.json의 tools 배열에
 
 ## 왜 이 스킬이 필요한가
 
-Skill 4(top3 선정)에서 task × tool feature 매칭을 하려면, 그 툴이 **구체적으로 어떤 기능을 제공하는지** 목록이 먼저 있어야 한다.
+Skill 4(후보 선정)에서 task × tool feature 매칭을 하려면, 그 툴이 **구체적으로 어떤 기능을 제공하는지** 목록이 먼저 있어야 한다.
 또한 Skill 5~8(M4~M1 설계)에서도 "이 기능으로 이런 실습을 한다", "이 툴은 이런 도구다"를 쓸 때 이 조사 결과를 참조한다.
 
 ## Input
 
 - `input.json`에서 **`tools`, `run_folder`**를 읽는다.
 - `tools`는 배열이다 (단일 툴도 `["ChatGPT"]`). Skill 1이 보장.
-- `run_folder`는 Skill 1이 생성한 실행 폴더 이름(상대 경로). 산출물은 이 폴더에 저장.
+- `run_folder`는 Skill 1이 input.json에 기록한 실행 폴더의 **절대 경로** (바탕화면 하위 `curriculum-builder-output/{company}_{role}_{YYYYMMDDHHMM}`). 산출물(`tool-features.json`)은 이 경로 직속에 저장.
 
 ### Skill 1 notes 참조
 
@@ -94,7 +94,7 @@ Skill 4(top3 선정)에서 task × tool feature 매칭을 하려면, 그 툴이 
 
 ※ 웹 검색 기반 조사이므로 미포함된 기능이 있을 수 있습니다. 빠진 기능이 있으면 알려주세요.
 
-산출물: curriculum-builder-output/{run_folder}/tool-features.json
+산출물: {run_folder}/tool-features.json
 
 확인 후 다음 단계(실습 task 선정)로 넘어가겠습니다.
 ```
@@ -119,7 +119,7 @@ Skill 4(top3 선정)에서 task × tool feature 매칭을 하려면, 그 툴이 
 
 ## Output: tool-features.json
 
-**저장 경로**: `curriculum-builder-output/{run_folder}/tool-features.json`
+**저장 경로**: `{run_folder}/tool-features.json`
 
 ### JSON 구조
 

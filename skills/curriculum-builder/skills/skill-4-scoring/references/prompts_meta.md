@@ -137,7 +137,7 @@ topic_elements 중 가장 관련 있는 하나를 선택하세요.
 ```
 당신은 Skill 4의 최종 결과를 LD에게 자연어로 보고합니다.
 
-[Input — top3-tasks.json의 해당 per_tool 블록 전문]
+[Input — top-tasks.json의 해당 per_tool 블록 전문]
 {per_tool[현재_툴] 전문 JSON}
 
 [참조 — 변환 규칙]
