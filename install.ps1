@@ -93,11 +93,12 @@ try {
     Write-Host "  [주의] git 명령 실행 실패 - 업데이트 체크 비활성화됨" -ForegroundColor Yellow
 }
 
-# install_path 기록 (curriculum-builder STEP 0 자동 업데이트용)
-# 본 파일이 위치한 폴더($REPO_ROOT)를 ~/.curriculum-builder/install_path.txt 에 기록.
-# STEP 0이 이 파일을 읽어 자동으로 git pull + install.ps1을 실행함 → LD가 폴더 위치를 기억하거나 수동 실행할 필요 X.
+# Record install path (for curriculum-builder STEP 0 auto-update)
+# Saves $REPO_ROOT (folder where this script lives) to ~/.curriculum-builder/install_path.txt.
+# STEP 0 reads this file and automatically runs git pull + install.ps1, so LDs don't need
+# to remember the clone folder or run install.ps1 manually next time.
 Write-Host ""
-Write-Host "[+] 설치 경로 기록 중..." -ForegroundColor Yellow
+Write-Host "[+] Recording install path..." -ForegroundColor Yellow
 try {
     $cbDir = Join-Path $env:USERPROFILE ".curriculum-builder"
     if (-not (Test-Path $cbDir)) {
@@ -105,9 +106,9 @@ try {
     }
     $pathFile = Join-Path $cbDir "install_path.txt"
     Set-Content -Path $pathFile -Value $REPO_ROOT -Encoding utf8 -NoNewline
-    Write-Host "  [완료] install_path.txt: $REPO_ROOT"
+    Write-Host "  [Done] install_path.txt: $REPO_ROOT"
 } catch {
-    Write-Host "  [주의] 설치 경로 기록 실패 - STEP 0 자동 업데이트 비활성화됨 (수동 안내로 fallback)" -ForegroundColor Yellow
+    Write-Host "  [Warning] Failed to record install path - STEP 0 auto-update disabled (manual fallback)" -ForegroundColor Yellow
 }
 
 Write-Host ""

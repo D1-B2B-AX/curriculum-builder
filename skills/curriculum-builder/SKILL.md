@@ -53,9 +53,9 @@ GitHub은 매 push마다 커밋에 고유 SHA를 자동 부여한다. 이 SHA를
      자동으로 업데이트를 진행할까요? (예 / 아니오)
      ```
 
-     - LD "예" / "응" / "진행" → install_path.txt 내용을 읽어 `{install_path}` 추출 후 PowerShell로 자동 실행:
+     - LD "예" / "응" / "진행" → install_path.txt 내용을 읽어 `{install_path}` 추출 후 PowerShell로 자동 실행 (`-ExecutionPolicy Bypass`로 PowerShell 보안 정책 차단 회피):
        ```
-       cd "{install_path}"; git pull; .\install.ps1
+       cd "{install_path}"; git pull; PowerShell -ExecutionPolicy Bypass -File .\install.ps1
        ```
        실행 후 안내:
        ```
@@ -77,6 +77,8 @@ GitHub은 매 push마다 커밋에 고유 SHA를 자동 부여한다. 이 SHA를
      업데이트하려면 curriculum-builder 레포를 clone한 폴더에서 PowerShell로:
        git pull
        .\install.ps1
+
+     (`.\install.ps1` 실행 시 ExecutionPolicy 오류가 나면 `PowerShell -ExecutionPolicy Bypass -File .\install.ps1` 로 대체)
 
      ★ install.ps1을 한 번 실행하시면 다음부터는 자동 업데이트가 가능합니다.
 
